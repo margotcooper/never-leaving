@@ -1,0 +1,20 @@
+#wrapper{
+    width: 100%;
+    max-width: 1024px;
+    display: flex
+    flex-wrap: wrap;
+}
+
+#wrapper h1{
+    width: 100%;
+}
+
+#searchBar{
+    width:200px;
+
+}
+#results{
+    width:80%;
+    margin-left:200px;
+
+}
