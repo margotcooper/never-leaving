@@ -11,10 +11,61 @@
 
 #searchBar{
     width:200px;
+    padding-top:82px;
 
 }
 #results{
-    width:80%;
-    margin-left:200px;
+    width:70%;
+    margin-left:250px;
+    display:flex;
+    padding-top: 73px;
+    position: relative;
+    border: 2px black;
 
+}
+.header{
+    display: block;
+    position: absolute;
+}
+#header{
+    padding-left: 230px;
+}
+.main{
+    display: block;
+    position: absolute;
+}
+.section{
+    display: block;
+    position: absolute;
+}
+
+#resultsNames{
+    margin-right:50px;
+}
+
+#resultsAreas{
+    margin-right:50px;
+}
+#resultsHours{
+    margin-right:50px;
+}
+
+.h3{
+    padding-left:900px;
+    margin-bottom: -1.5rem;
+}
+.ul{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.li{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.h{
+    padding-left: 120px;
+}
+
+.resultsHeaders{
+    text-decoration: underline;
 }
