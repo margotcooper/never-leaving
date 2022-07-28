@@ -27,31 +27,31 @@ function searchEvents(){
     // get search phrase
     var searchPhrase = searchPhraseBoxEl.value.replace(/ /g, '-');
 
-    
+    //console.log(searchPhrase);
     //second, get checked checkboxes
-    /*for (i=0; i < evtCkboxEls.length; i++){
+    for (i=0; i < evtCkboxEls.length; i++){
         if(evtCkboxEls[i].checked){
             //console.log(evtCkboxEls[i].id);
-            searchPhrase += '&' + 
+            searchPhrase += '&' + evtCkboxEls[i].id;
             console.log(searchPhrase);
         }
-    }*/
-    var requestUrl = `https://api.seatgeek.com/2/events?performers.slug=${searchPhrase}&lat=32.7174202&lon=-117.1627728&client_id=MjgwNTI3ODN8MTY1ODgwNDk2Ny40MzUwODQ4&client_secret=85b20bc2aa3ec76141297b33f744b07b992ea1cfdcd7fabbc802e2057bae02b8`;
-    //
+    }//performers.slug=
+    var requestUrl = `https://api.seatgeek.com/2/events?q=${searchPhrase}&lat=32.7174202&lon=-117.1627728&client_id=MjgwNTI3ODN8MTY1ODgwNDk2Ny40MzUwODQ4&client_secret=85b20bc2aa3ec76141297b33f744b07b992ea1cfdcd7fabbc802e2057bae02b8`;
+    //console.log(requestUrl);
     fetch(requestUrl)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
+        console.log(data.events.length);
        for(var i=0; i < data.events.length; i++){
-        //console.log(data.events[i]);
+        console.log(data.events[i]);
         document.querySelectorAll('#resultsNames ul li')[i].innerHTML = data.events[i].title;
         document.querySelectorAll('#resultsAreas ul li')[i].innerHTML = data.events[i].venue.name;
         document.querySelectorAll('#resultsHours ul li')[i].innerHTML = data.events[i].datetime_utc;
        }
     })
   }
-//searchEvents();
 
 searchBtnEl.addEventListener('click',searchEvents);
 
