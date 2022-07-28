@@ -130,3 +130,33 @@ Business Details	/businesses/{id}	Get rich business data, such as name, address,
 /events/{id}
 This endpoint returns the detailed information of a Yelp event. You can get the event ID from /events or /events/featured.  GET https://api.yelp.com/v3/events/{id}
 */
+
+
+
+
+
+
+
+
+
+
+
+// let yelpAPI = require('yelp-api');
+
+// // Create a new yelpAPI object with your API key
+// let apiKey = 'YOUR_API_KEY';
+// let yelp = new yelpAPI(apiKey);
+
+// // Set any parameters, if applicable (see API documentation for allowed params)
+// let params = [{ location: 'San Diego' , category: 'restaurant'}];
+
+// // Call the endpoint
+// yelp.query('businesses/search', params)
+// .then(data => {
+//   // Success
+//   console.log(data);
+// })
+// .catch(err => {
+//   // Failure
+//   console.log(err);
+// });
