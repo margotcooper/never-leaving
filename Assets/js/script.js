@@ -37,7 +37,26 @@ function searchEvents(){
         }
     }*/
     var requestUrl = `https://api.seatgeek.com/2/events?performers.slug=${searchPhrase}&lat=32.7174202&lon=-117.1627728&client_id=MjgwNTI3ODN8MTY1ODgwNDk2Ny40MzUwODQ4&client_secret=85b20bc2aa3ec76141297b33f744b07b992ea1cfdcd7fabbc802e2057bae02b8`;
-    //console.log(requestUrl);
+    //
+    fetch(requestUrl)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+       for(var i=0; i < data.events.length; i++){
+        //console.log(data.events[i]);
+        document.querySelectorAll('#resultsNames ul li')[i].innerHTML = data.events[i].title;
+        document.querySelectorAll('#resultsAreas ul li')[i].innerHTML = data.events[i].venue.name;
+        document.querySelectorAll('#resultsHours ul li')[i].innerHTML = data.events[i].datetime_utc;
+       }
+    })
+  }
+//searchEvents();
+
+searchBtnEl.addEventListener('click',searchEvents);
+
+/*console.log(requestUrl);
+
     //var requestUrl = URL(string:"https://api.yelp.com/v3/businesses/search?text=&location=coronado&term=restaurant");
     //&clientID=fCDe8r_Udq8P1Zrq3i3iWA
     //&apiKey=xPeUTskMuMC-scLgkWv4DwxwPfi9f9jiSlKeVQoLIoLYLFF_FLJ8nIhu19ChnP9fSjDnh_tnLQhHpfZpvWKhD6bNmsNLA4Bk_Q-_47BOI7gRcB73AO7g_YR5NLfgYnYx"
@@ -67,22 +86,6 @@ function searchEvents(){
         mode: 'no-cors',
         cache: 'default',
     }*/
-    fetch(requestUrl)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-       for(var i=0; i < data.events.length; i++){
-        console.log(data.events[i]);
-        document.querySelectorAll('#resultsNames ul li')[i].innerHTML = data.events[i].title;
-        document.querySelectorAll('#resultsAreas ul li')[i].innerHTML = data.events[i].venue.name;
-        document.querySelectorAll('#resultsHours ul li')[i].innerHTML = data.events[i].datetime_utc;
-       }
-    })
-  }
-searchEvents();
-
-searchBtnEl.addEventListener('click',searchEvents);
 
 /** YELP\\
 
