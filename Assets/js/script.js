@@ -53,7 +53,34 @@ function searchEvents(){
     })
   }
 
-searchBtnEl.addEventListener('click',searchEvents);
+searchBtnEl.addEventListener('click',searchRestaurantsAndBars);//searchEvents
+
+
+
+function searchRestaurantsAndBars(){
+    var searchPhrase = searchPhraseBoxEl.value.replace(/ /g, '-');
+    console.log(searchPhrase);
+    const options = {
+        /*method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            //'Content-Type': 'application/x-www-form-urlencoded',
+            'X-RapidAPI-Key': '68a3d9693emsh0f1020f9f4d7360p19256bjsnec143679533f',
+            'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+        },
+        body:
+            '{"query":"chiang mai","updateToken":""}'
+        
+        //mode: 'no-cors'*/
+    };
+
+    //fetch(`https://travel-advisor.p.rapidapi.com/locations/v2/search?query=${searchPhrase}&lang=en_US`, options)//query=${searchPhrase} query=eiffel%20tower
+    fetch(`https://developers.zomato.com/api/v2.1/?query=${searchPhrase}`)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err))
+}
+//searchRestaurantsAndBars();
 
 /*console.log(requestUrl);
             searchPhrase += '&' + 
