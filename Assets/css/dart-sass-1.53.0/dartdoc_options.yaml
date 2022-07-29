@@ -1,8 +1,0 @@
-dartdoc:
-  categories:
-    Compile:
-      markdown: doc/compile.md
-    Importer:
-      markdown: doc/importer.md
-    Value:
-      markdown: doc/value.md
