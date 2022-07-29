@@ -1,7 +1,7 @@
 #wrapper{
     width: 100%;
     max-width: 1024px;
-    display: flex
+    display: flex;
     flex-wrap: wrap;
 }
 
