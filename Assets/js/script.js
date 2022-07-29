@@ -55,7 +55,7 @@ function searchEvents(){
 
 searchBtnEl.addEventListener('click',searchEvents);
 
-console.log(requestUrl);
+
 
     //var requestUrl = URL(string:"https://api.yelp.com/v3/businesses/search?text=&location=coronado&term=restaurant");
     //&clientID=fCDe8r_Udq8P1Zrq3i3iWA
@@ -68,23 +68,11 @@ console.log(requestUrl);
     //let apiKey = "your_api_key"
     //var url = URL(string: "https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972");
     //var request = URLRequest(url: url);
-    var requestUrl = "https://api.yelp.com/v3/businesses/search?text=band";
+    //var requestUrl = "https://api.yelp.com/v3/businesses/search?text=band";
     //var request = URLRequest(requestUrl, requestUrl)
     //request.addValue("Bearer \xPeUTskMuMC-scLgkWv4DwxwPfi9f9jiSlKeVQoLIoLYLFF_FLJ8nIhu19ChnP9fSjDnh_tnLQhHpfZpvWKhD6bNmsNLA4Bk_Q-_47BOI7gRcB73AO7g_YR5NLfgYnYx", forHTTPHeaderField: "Authorization");
     //const data = {text: "restaurant"};
     fetch(requestUrl), {
-        method: 'get',
-        headers: {
-            'Authorization': 'Bearer xPeUTskMuMC-scLgkWv4DwxwPfi9f9jiSlKeVQoLIoLYLFF_FLJ8nIhu19ChnP9fSjDnh_tnLQhHpfZpvWKhD6bNmsNLA4Bk_Q-_47BOI7gRcB73AO7g_YR5NLfgYnYx',
-            //'Accept': 'application/json, text/plain, /',
-            //'Access-Control-Allow-Origin': 'http://localhost',
-            //'Content-Type': 'application/x-www-form-urlencoded'
-            //'Content-Type': 'application/json;charset=utf-8',
-            //'Cache-Control': 'private'
-        },
-        //body: JSON.stringify(data),
-        mode: 'no-cors',
-        cache: 'default'
     }
 
 /** YELP\\
