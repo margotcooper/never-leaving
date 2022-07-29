@@ -36,7 +36,7 @@ function searchEvents(){
             console.log(searchPhrase);
         }
     }//performers.slug=
-    var requestUrl = `https://api.seatgeek.com/2/events?q=${searchPhrase}&lat=32.7174202&lon=-117.1627728&client_id=MjgwNTI3ODN8MTY1ODgwNDk2Ny40MzUwODQ4&client_secret=85b20bc2aa3ec76141297b33f744b07b992ea1cfdcd7fabbc802e2057bae02b8`;
+    /*var requestUrl = `https://api.seatgeek.com/2/events?q=${searchPhrase}&lat=32.7174202&lon=-117.1627728&client_id=MjgwNTI3ODN8MTY1ODgwNDk2Ny40MzUwODQ4&client_secret=85b20bc2aa3ec76141297b33f744b07b992ea1cfdcd7fabbc802e2057bae02b8`;
     //console.log(requestUrl);
     fetch(requestUrl)
     .then(function (response) {
@@ -50,12 +50,12 @@ function searchEvents(){
         document.querySelectorAll('#resultsAreas ul li')[i].innerHTML = data.events[i].venue.name;
         document.querySelectorAll('#resultsHours ul li')[i].innerHTML = data.events[i].datetime_utc;
        }
-    })
-  }
+    })*/
+}
 
 searchBtnEl.addEventListener('click',searchEvents);
 
-/*console.log(requestUrl);
+console.log(requestUrl);
 
     //var requestUrl = URL(string:"https://api.yelp.com/v3/businesses/search?text=&location=coronado&term=restaurant");
     //&clientID=fCDe8r_Udq8P1Zrq3i3iWA
@@ -68,24 +68,24 @@ searchBtnEl.addEventListener('click',searchEvents);
     //let apiKey = "your_api_key"
     //var url = URL(string: "https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972");
     //var request = URLRequest(url: url);
-    //var requestUrl = "https://api.yelp.com/v3/businesses/search?location=coronado";
+    var requestUrl = "https://api.yelp.com/v3/businesses/search?text=band";
     //var request = URLRequest(requestUrl, requestUrl)
     //request.addValue("Bearer \xPeUTskMuMC-scLgkWv4DwxwPfi9f9jiSlKeVQoLIoLYLFF_FLJ8nIhu19ChnP9fSjDnh_tnLQhHpfZpvWKhD6bNmsNLA4Bk_Q-_47BOI7gRcB73AO7g_YR5NLfgYnYx", forHTTPHeaderField: "Authorization");
     //const data = {text: "restaurant"};
-    /*fetch(requestUrl)/*, {
+    fetch(requestUrl), {
         method: 'get',
         headers: {
             'Authorization': 'Bearer xPeUTskMuMC-scLgkWv4DwxwPfi9f9jiSlKeVQoLIoLYLFF_FLJ8nIhu19ChnP9fSjDnh_tnLQhHpfZpvWKhD6bNmsNLA4Bk_Q-_47BOI7gRcB73AO7g_YR5NLfgYnYx',
-            'Accept': 'application/json, text/plain, /'
+            //'Accept': 'application/json, text/plain, /',
             //'Access-Control-Allow-Origin': 'http://localhost',
-            'Content-Type': 'application/x-www-form-urlencoded'
+            //'Content-Type': 'application/x-www-form-urlencoded'
             //'Content-Type': 'application/json;charset=utf-8',
             //'Cache-Control': 'private'
         },
         //body: JSON.stringify(data),
         mode: 'no-cors',
-        cache: 'default',
-    }*/
+        cache: 'default'
+    }
 
 /** YELP\\
 
