@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hitting the Town App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link href="./Assets/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <header class="header" id="wrapper">
+      <h3 id="dateDiv" class="h3">moment</h3>
+      <h1 id="header" class="h">Choose Your Own Adventure!</h1>
+      </header>
+      <section class="section" id="searchBar">
+        <form id="searchForm">
+          <input type="text" id="searchPhraseBox" />
+          <button id="searchBtn" type="button">Show Me More!</button><br>
+          <strong>Include:</strong><br>
+          <input type="checkbox" class="evtCkbox" id="restsCkbox" /><label for="restsCkbox">Restaurants</label><br>
+          <input type="checkbox" class="evtCkbox" id="barsCkbox" /><label for="barsCkbox">Bars</label><br>
+          <input type="checkbox" class="evtCkbox" id="eventsCkbox" /><label for="eventsCkbox">Events</label><br>
+          <input type="checkbox" class="evtCkbox" id="concertsCkbox" /><label for="concertsCkbox">Concerts</label><br>
+          <input type="checkbox" class="evtCkbox" id="sportsCkbox" /><label for="sportsCkbox">Sports</label>
+        </form>
+      </section>
+      <section class="section" id="results">
+        <div class= "resultsHeaders"id="resultsNames">
+          <h2 class="h">Names</h2>
+          <ul class="ul">
+            <li class="li" id="Names1"> </li>
+            <li class="li" id="Names2"> </li>
+            <li class="li" id="Names3"> </li>
+            <li class="li" id="Names4"> </li>
+            <li class="li" id="Names5"> </li>
+            <li class="li" id="Names6"> </li>
+            <li class="li" id="Names7"> </li>
+            <li class="li" id="Names8"> </li>
+            <li class="li" id="Names9"> </li>
+            <li class="li" id="Names10"> </li>
+          </ul>
+        </div>
+        <div class= "resultsHeaders" id="resultsAreas">
+          <h2 class="h">Areas</h2>
+          <ul class="ul">
+            <li class="li" id="Areas1"> </li>
+            <li class="li" id="Areas2"> </li>
+            <li class="li" id="Areas3"> </li>
+            <li class="li" id="Areas4"> </li>
+            <li class="li" id="Areas5"> </li>
+            <li class="li" id="Areas6"> </li>
+            <li class="li" id="Areas7"> </li>
+            <li class="li" id="Areas8"> </li>
+            <li class="li" id="Areas9"> </li>
+            <li class="li" id="Areas10"> </li>
+          </ul>
+        </div>
+        <div class= "resultsHeaders" id="resultsHours">
+          <h2 class="h">Hours</h2>
+          <ul class="ul">
+            <li class="li" id="Hours1"> </li>
+            <li class="li" id="Hours2"> </li>
+            <li class="li" id="Hours3"> </li>
+            <li class="li" id="Hours4"> </li>
+            <li class="li" id="Hours5"> </li>
+            <li class="li" id="Hours6"> </li>
+            <li class="li" id="Hours7"> </li>
+            <li class="li" id="Hours8"> </li>
+            <li class="li" id="Hours9"> </li>
+            <li class="li" id="Hours10"> </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+      <script src="./Assets/js/script.js"></script>
+  </body>
+</html>
