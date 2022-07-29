@@ -91,17 +91,17 @@ searchBtnEl.addEventListener('click',searchEvents);
         method: 'get',
         headers: {
             'Authorization': 'Bearer xPeUTskMuMC-scLgkWv4DwxwPfi9f9jiSlKeVQoLIoLYLFF_FLJ8nIhu19ChnP9fSjDnh_tnLQhHpfZpvWKhD6bNmsNLA4Bk_Q-_47BOI7gRcB73AO7g_YR5NLfgYnYx',
-            'Accept': 'application/json, text/plain, */*', 
+            //'Accept': 'application/json, text/plain, */
             //'Access-Control-Allow-Origin': 'http://localhost',
-            'Content-Type': 'application/x-www-form-urlencoded'
+            //'Content-Type': 'application/x-www-form-urlencoded'
             //'Content-Type': 'application/json;charset=utf-8',
             //'Cache-Control': 'private'
-        },
+        //},
         //body: JSON.stringify(data),
-        mode: 'no-cors',
-        cache: 'default',
+        //mode: 'no-cors',
+        //cache: 'default',
 
-    }*/
+    //}
 
 /** YELP\\
 * Client ID clientID=fCDe8r_Udq8P1Zrq3i3iWA&apiKey=xPeUTskMuMC-scLgkWv4DwxwPfi9f9jiSlKeVQoLIoLYLFF_FLJ8nIhu19ChnP9fSjDnh_tnLQhHpfZpvWKhD6bNmsNLA4Bk_Q-_47BOI7gRcB73AO7g_YR5NLfgYnYx
