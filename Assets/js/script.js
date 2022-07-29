@@ -17,7 +17,6 @@ eventsCkboxEl.addEventListener('change',includeInSearch);
 concertsCkboxEl.addEventListener('change',includeInSearch);
 sportsCkboxEl.addEventListener('change',includeInSearch);
 */
-
 //resultsEl.addEventListener('click',searchForEvent);
 
 //var searchOptions = [];
@@ -34,11 +33,11 @@ function searchEvents(){
             //console.log(evtCkboxEls[i].id);
 
             searchPhrase += '&' + evtCkboxEls[i].id;
-            console.log(searchPhrase);
+            //console.log(searchPhrase);
         }
     }//performers.slug=
     var requestUrl = `https://api.seatgeek.com/2/events?q=${searchPhrase}&lat=32.7174202&lon=-117.1627728&client_id=MjgwNTI3ODN8MTY1ODgwNDk2Ny40MzUwODQ4&client_secret=85b20bc2aa3ec76141297b33f744b07b992ea1cfdcd7fabbc802e2057bae02b8`;
-    //console.log(requestUrl);
+    console.log(requestUrl);
     fetch(requestUrl)
     .then(function (response) {
         return response.json();
