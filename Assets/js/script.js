@@ -60,26 +60,60 @@ searchBtnEl.addEventListener('click',searchRestaurantsAndBars);//searchEvents
 function searchRestaurantsAndBars(){
     var searchPhrase = searchPhraseBoxEl.value.replace(/ /g, '-');
     console.log(searchPhrase);
-    const options = {
-        /*method: 'POST',
-        headers: {
-            'content-type': 'application/json',
-            //'Content-Type': 'application/x-www-form-urlencoded',
-            'X-RapidAPI-Key': '68a3d9693emsh0f1020f9f4d7360p19256bjsnec143679533f',
-            'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
-        },
-        body:
-            '{"query":"chiang mai","updateToken":""}'
+    // const options = {
+    //     /*method: 'POST',
+    //     headers: {
+    //         'content-type': 'application/json',
+    //         //'Content-Type': 'application/x-www-form-urlencoded',
+    //         'X-RapidAPI-Key': '68a3d9693emsh0f1020f9f4d7360p19256bjsnec143679533f',
+    //         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+    //     },
+    //     body:
+    //         '{"query":"chiang mai","updateToken":""}'
         
-        //mode: 'no-cors'*/
-    };
+    //     //mode: 'no-cors'*/
+    // };
+    
+    for (i=0; i < restsCkboxEl.length; i++){
+        if(restsCkboxEl[i].checked){
+            //console.log(restsCkboxEls[i].id);
+    
+            searchPhrase += '&' + restsCkboxEls[i].id;
+        } 
+    }      
 
     //fetch(`https://travel-advisor.p.rapidapi.com/locations/v2/search?query=${searchPhrase}&lang=en_US`, options)//query=${searchPhrase} query=eiffel%20tower
-    fetch(`https://developers.zomato.com/api/v2.1/?query=${searchPhrase}`)
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '4e1ed986c1msh1ed323ba6ba6ac6p1b75ffjsnc61ea16e78da',
+            'X-RapidAPI-Host': 'restaurants-near-me-usa.p.rapidapi.com'
+        }
+    };
+    
+    fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/CA/city/San%20Diego/0', options)
         .then(response => response.json())
         .then(response => console.log(response))
-        .catch(err => console.error(err))
+        .catch(err => console.error(err));
+    
+        .then(function (data) {
+            console.log(data.events.length);
+           for(var i=0; i < data.events.length; i++){
+            console.log(data.events[i]);
+            document.querySelectorAll('#resultsNames ul li')[i].innerHTML = data.events[i].restaurantName;
+            document.querySelectorAll('#resultsAreas ul li')[i].innerHTML = data.events[i].address + data.events[i].zipCode ;
+            document.querySelectorAll('#resultsHours ul li')[i].innerHTML = data.events[i].hoursInterval;
+           }
+        })
+         
 }
+
+
+
+
+
+
+
 //searchRestaurantsAndBars();
 
 /*console.log(requestUrl);
