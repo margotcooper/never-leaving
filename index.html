@@ -14,19 +14,32 @@
   <body>
     <main>
       <header class="header" id="wrapper">
-        <h3 id="dateDiv" class="h3">moment</h3>
-        <h1 id="header" class="h">Choose Your Own Adventure!</h1>
+        <h3 id="dateDiv" class="h3 has-text-right">moment</h3>
+        <h1 id="header" class="h is-size-2 is-uppercase has-text-weight-bold">
+          Choose Your Own Adventure!
+        </h1>
       </header>
-      <section class="section" id="searchBar">
+      <section class="section is-size-5" id="searchBar">
         <form id="searchForm">
-          <input type="text" id="searchPhraseBox" placeholder="Search by Name or Date" />
-          <button id="searchBtn" type="button">Show Me Places to Go!</button
+          <input
+            type="text"
+            id="searchPhraseBox"
+            placeholder="Search by Name or Date"
+          />
+          <button
+            id="searchBtn"
+            type="button"
+            class="button is-primary is-medium"
+          >
+            Show Me Places to Go!</button
           ><br />
           <strong>Include:</strong><br />
-          <input type="radio" class="evtRadio" id="restsRadio" name="searchOptions" /><label
-            for="restsRadio"
-            >Restaurants and Bars</label
-          ><br />
+          <input
+            type="radio"
+            class="evtRadio"
+            id="restsRadio"
+            name="searchOptions"
+          /><label for="restsRadio">Restaurants and Bars</label><br />
           <!--<input type="radio" class="evtRadio" id="barsRadio" name="searchOptions" /><label
             for="barsRadio"
             >Bars</label
@@ -34,17 +47,20 @@
           <input
             type="radio"
             class="evtRadio"
-            id="concert" name="searchOptions"
+            id="concert"
+            name="searchOptions"
           /><label for="concert">Concerts</label><br />
           <input
             type="radio"
             class="evtRadio"
-            id="sports" name="searchOptions"
+            id="sports"
+            name="searchOptions"
           /><label for="sports">Sports</label><br />
           <input
             type="radio"
             class="evtRadio"
-            id="allEventsRadio" name="searchOptions"
+            id="allEventsRadio"
+            name="searchOptions"
           /><label for="allEvents">Search All</label>
         </form>
       </section>
