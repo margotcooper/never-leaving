@@ -66,8 +66,6 @@ function searchSeatGeekEvents(){
 
 searchBtnEl.addEventListener('click',searchAllEvents);//searchSeatGeekEventssearchRestaurantsNearMe
 
-
-
 function searchRestaurantsNearMe(){
     changeResultsDateTimeHeader.innerText = 'Hours';
     var searchPhrase = searchPhraseBoxEl.value.replace(/ /g, '-');
