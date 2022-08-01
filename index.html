@@ -19,28 +19,33 @@
       </header>
       <section class="section" id="searchBar">
         <form id="searchForm">
-          <input type="text" id="searchPhraseBox" />
+          <input type="text" id="searchPhraseBox" placeholder="Search by Name or Date" />
           <button id="searchBtn" type="button">Show Me Places to Go!</button
           ><br />
           <strong>Include:</strong><br />
-          <input type="checkbox" class="evtCkbox" id="restsCkbox" /><label
-            for="restsCkbox"
-            >Restaurants</label
+          <input type="radio" class="evtRadio" id="restsRadio" name="searchOptions" /><label
+            for="restsRadio"
+            >Restaurants and Bars</label
           ><br />
-          <input type="checkbox" class="evtCkbox" id="barsCkbox" /><label
-            for="barsCkbox"
+          <!--<input type="radio" class="evtRadio" id="barsRadio" name="searchOptions" /><label
+            for="barsRadio"
             >Bars</label
-          ><br />
+          ><br />-->
           <input
-            type="checkbox"
-            class="evtCkbox"
-            id="taxonomies.name=concert"
-          /><label for="concertsCkbox">Concerts</label><br />
+            type="radio"
+            class="evtRadio"
+            id="concert" name="searchOptions"
+          /><label for="concert">Concerts</label><br />
           <input
-            type="checkbox"
-            class="evtCkbox"
-            id="taxonomies.name=sports"
-          /><label for="sportsCkbox">Sports</label>
+            type="radio"
+            class="evtRadio"
+            id="sports" name="searchOptions"
+          /><label for="sports">Sports</label><br />
+          <input
+            type="radio"
+            class="evtRadio"
+            id="allEventsRadio" name="searchOptions"
+          /><label for="allEvents">Search All</label>
         </form>
       </section>
       <section class="section" id="results">
