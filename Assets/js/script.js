@@ -15,9 +15,7 @@ var evtRadioEls = document.querySelectorAll('.evtRadio');
 // time/date at top of page
 function updateTime() {
     var currentTime = moment().format('MMM Do YYYY');
-    //var currentMonth = moment().format("MMMM");
     dateDivEl.textContent = currentTime;
-    //currentMonthEl.textContent = currentMonth;
 };
 setInterval(updateTime, 1000);
 
@@ -37,7 +35,6 @@ function searchSeatGeekEvents(){
 
 
     var requestUrl = `https://api.seatgeek.com/2/events?q=${searchPhrase}&lat=32.7174202&lon=-117.1627728&client_id=MjgwNTI3ODN8MTY1ODgwNDk2Ny40MzUwODQ4&client_secret=85b20bc2aa3ec76141297b33f744b07b992ea1cfdcd7fabbc802e2057bae02b8`;
-    //console.log(requestUrl);
     fetch(requestUrl)
     .then(function (response) {
         return response.json();
@@ -101,7 +98,7 @@ function searchAllEvents(){
         searchSeatGeekEvents();
         concatEventsAndFood();
     }
-    else if(restsRadioEl.checked){// ||barsRadioEl.clicked
+    else if(restsRadioEl.checked){
         searchRestaurantsNearMe();
     }
     else if(concertRadioEl.checked || sportsRadioEl.checked){
