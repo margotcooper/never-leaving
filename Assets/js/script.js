@@ -54,18 +54,16 @@ function searchSeatGeekEvents(){
     })
   }
 
-searchBtnEl.addEventListener('click',searchAllEvents);//searchSeatGeekEventssearchRestaurantsNearMe
+searchBtnEl.addEventListener('click',searchAllEvents);
 
 function searchRestaurantsNearMe(){
     changeResultsDateTimeHeader.innerText = 'Hours';
     var searchPhrase = searchPhraseBoxEl.value.replace(/ /g, '-');
     
         if(restsRadioEl.checked){
-            //console.log(restsRadioEls[i].id);
             searchPhrase += '&restsRadio';
         }
 
-    //fetch(`https://travel-advisor.p.rapidapi.com/locations/v2/search?query=${searchPhrase}&lang=en_US`, options)//query=${searchPhrase} query=eiffel%20tower
     const options = {
         method: 'GET',
         headers: {
@@ -76,17 +74,13 @@ function searchRestaurantsNearMe(){
     
     fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/CA/city/San%20Diego/0?q=fuddruckers', options)
     .then(response => response.json())
-    //.then(response => console.log(response))
     .catch(err => console.error(err))
 
     .then(function (data) {
-        //console.log(data.restaurants.length);
         for(var i=0; i < data.restaurants.length; i++){
-            //console.log(data.restaurants[i]);
             document.querySelectorAll('#resultsNames ul li')[i].innerHTML = data.restaurants[i].restaurantName;
             document.querySelectorAll('#resultsAreas ul li')[i].innerHTML = data.restaurants[i].address + data.restaurants[i].zipCode;
             restHours = data.restaurants[i].hoursInterval.split('|');
-            //console.log(restHours.length);
             for(j = 0; j <= restHours.length; j++){
                 document.querySelectorAll('#resultsHours ul li')[j].innerHTML += restHours[j] + "<br>";
             }
