@@ -40,13 +40,14 @@ function searchSeatGeekEvents(){
         return response.json();
     })
     .then(function (data) {
-       //console.log(data.events.length);
-       for(var i=0; i < data.events.length; i++){
-        console.log(data.events[i]);
-        document.querySelectorAll('#resultsNames ul li')[i].innerHTML = data.events[i].title;
-        document.querySelectorAll('#resultsAreas ul li')[i].innerHTML = data.events[i].venue.name;
-        var eventDate = moment(data.events[i].datetime_utc).format('lll');
-        document.querySelectorAll('#resultsHours ul li')[i].innerHTML = eventDate;
+        var resultsTable = document.getElementById('results');
+        
+        for(var i=0; i < data.events.length; i++){
+            var tableRow = document.createElement('tr');
+            document.querySelectorAll('#resultsNames ul li')[i].innerHTML = data.events[i].title;
+            document.querySelectorAll('#resultsAreas ul li')[i].innerHTML = data.events[i].venue.name;
+            var eventDate = moment(data.events[i].datetime_utc).format('lll');
+            document.querySelectorAll('#resultsHours ul li')[i].innerHTML = eventDate;
        }
     })
   }
