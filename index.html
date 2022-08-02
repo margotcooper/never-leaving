@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +19,7 @@
   <body>
     <main>
       <header class="header" id="wrapper">
-        <h3 id="dateDiv" class="h3 has-text-right">moment</h3>
+        <h3 id="dateDiv" class="h3 has-text-right"></h3>
         <h1 id="header" class="h is-size-2 is-uppercase has-text-weight-bold">
           Choose Your Own Adventure!
         </h1>
@@ -63,64 +64,23 @@
           <input
             type="radio"
             class="evtRadio"
-            id="allEventsRadio"
-            name="searchOptions"
-          /><label for="allEvents">Search All</label>
+            id="allEventsRadio" name="searchOptions"
+          /><label for="allEventsRadio">Search Concerts and Sports</label>
+
         </form>
       </section>
-      <section class="section" id="results">
-        <div class="resultsHeaders" id="resultsNames">
-          <h2 class="h">Names</h2>
-          <ul class="ul">
-            <li class="li" id="Names1"></li>
-            <li class="li" id="Names2"></li>
-            <li class="li" id="Names3"></li>
-            <li class="li" id="Names4"></li>
-            <li class="li" id="Names5"></li>
-            <li class="li" id="Names6"></li>
-            <li class="li" id="Names7"></li>
-            <li class="li" id="Names8"></li>
-            <li class="li" id="Names9"></li>
-            <li class="li" id="Names10"></li>
-          </ul>
-        </div>
-        <div class="resultsHeaders" id="resultsAreas">
-          <h2 class="h">Location</h2>
-          <ul class="ul">
-            <li class="li" id="Areas1"></li>
-            <li class="li" id="Areas2"></li>
-            <li class="li" id="Areas3"></li>
-            <li class="li" id="Areas4"></li>
-            <li class="li" id="Areas5"></li>
-            <li class="li" id="Areas6"></li>
-            <li class="li" id="Areas7"></li>
-            <li class="li" id="Areas8"></li>
-            <li class="li" id="Areas9"></li>
-            <li class="li" id="Areas10"></li>
-          </ul>
-        </div>
-        <div class="resultsHeaders" id="resultsHours">
-          <h2 class="h">Date & Time</h2>
-          <ul class="ul">
-            <li class="li" id="Hours1"></li>
-            <li class="li" id="Hours2"></li>
-            <li class="li" id="Hours3"></li>
-            <li class="li" id="Hours4"></li>
-            <li class="li" id="Hours5"></li>
-            <li class="li" id="Hours6"></li>
-            <li class="li" id="Hours7"></li>
-            <li class="li" id="Hours8"></li>
-            <li class="li" id="Hours9"></li>
-            <li class="li" id="Hours10"></li>
-          </ul>
-        </div>
+      <section class="section">
+        <table id="results">
+          <tr>
+            <th class="resultsHeaders" id="resultsNames">Names</th>
+            <th class="resultsHeaders" id="resultsAreas">Location</th>
+            <th class="resultsHeaders" id="resultsHours">Date & Time</th>
+          </tr>
+        </table>          
       </section>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
