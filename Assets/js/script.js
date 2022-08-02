@@ -112,7 +112,7 @@ function searchRestaurantsNearMe(){
 }
 
 function searchAllEvents(){
-    resultsTable.replaceChildren;
+    resultsTable.replaceChildren();
     if(allEventsRadioEl.checked){// All events and food/drink
         searchRestaurantsNearMe();
         searchSeatGeekEvents();
