@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,20 +30,15 @@
             id="searchPhraseBox"
             placeholder="Search by Name or Date"
           />
-          <button
-            id="searchBtn"
-            type="button"
-            class="button is-primary is-medium"
-          >
-            Show Me Places to Go!</button
-          ><br />
+          <br />
           <strong>Include:</strong><br />
           <input
             type="radio"
             class="evtRadio"
             id="restsRadio"
             name="searchOptions"
-          /><label for="restsRadio">Restaurants and Bars</label><br />
+          /><label class="radio" for="restsRadio">Restaurants and Bars</label
+          ><br />
           <!--<input type="radio" class="evtRadio" id="barsRadio" name="searchOptions" /><label
             for="barsRadio"
             >Bars</label
@@ -54,20 +48,29 @@
             class="evtRadio"
             id="concert"
             name="searchOptions"
-          /><label for="concert">Concerts</label><br />
+          /><label class="radio" for="concert">Concerts</label><br />
           <input
             type="radio"
             class="evtRadio"
             id="sports"
             name="searchOptions"
-          /><label for="sports">Sports</label><br />
+          /><label class="radio" for="sports">Sports</label><br />
           <input
             type="radio"
             class="evtRadio"
             id="allEventsRadio"
             name="searchOptions"
-          /><label for="allEventsRadio">Search Concerts and Sports</label>
+          /><label class="radio" for="allEventsRadio"
+            >Search Concerts and Sports</label
+          >
         </form>
+        <button
+          id="searchBtn"
+          type="button"
+          class="button is-primary is-medium"
+        >
+          Show Me Places to Go!
+        </button>
       </section>
       <section class="section">
         <table id="results">
