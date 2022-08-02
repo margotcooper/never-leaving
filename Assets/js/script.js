@@ -74,28 +74,12 @@ searchBtnEl.addEventListener('click',searchAllEvents);//searchSeatGeekEventssear
 function searchRestaurantsNearMe(){
     changeResultsDateTimeHeader.innerText = 'Hours';
     var searchPhrase = searchPhraseBoxEl.value.replace(/ /g, '-');
-
-    //console.log(searchPhrase);
-    // const options = {
-    //     /*method: 'POST',
-    //     headers: {
-    //         'content-type': 'application/json',
-    //         //'Content-Type': 'application/x-www-form-urlencoded',
-    //         'X-RapidAPI-Key': '68a3d9693emsh0f1020f9f4d7360p19256bjsnec143679533f',
-    //         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
-    //     },
-    //     body:
-    //         '{"query":"chiang mai","updateToken":""}'
-        
-    //     //mode: 'no-cors'*/
-    // };
     
         if(restsRadioEl.checked){
             //console.log(restsRadioEls[i].id);
             searchPhrase += '&restsRadio';
         }
 
-    //fetch(`https://travel-advisor.p.rapidapi.com/locations/v2/search?query=${searchPhrase}&lang=en_US`, options)//query=${searchPhrase} query=eiffel%20tower
     const options = {
         method: 'GET',
         headers: {
@@ -104,7 +88,7 @@ function searchRestaurantsNearMe(){
         }
     }
     
-    fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/CA/city/San%20Diego/0?q=fuddruckers', options)
+    fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/CA/city/San%20Diego/0', options)
     .then(response => response.json())
     //.then(response => console.log(response))
     .catch(err => console.error(err))
