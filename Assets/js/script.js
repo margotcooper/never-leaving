@@ -7,8 +7,9 @@ var allEventsRadioEl = document.getElementById('allEventsRadio');
 var concertRadioEl = document.getElementById('concert');
 var sportsRadioEl = document.getElementById('sports');
 var dateDivEl = document.getElementById('dateDiv');
-var resultsEl = document.getElementById('results');
-var changeResultsDateTimeHeader = document.querySelector('#resultsHours h2');
+
+var resultsTable = document.getElementById('results');
+var changeResultsDateTimeHeader = document.querySelector('#resultsHours');
 
 var evtRadioEls = document.querySelectorAll('.evtRadio');
 
@@ -28,9 +29,12 @@ function searchSeatGeekEvents(){
 
     // Get checked radio buttons
     for (i = 0; i < evtRadioEls.length; i++){
-        if(evtRadioEls[i].checked){
+        if (allEventsRadioEl.checked == true){
+            searchPhrase += '&taxonomies.name=sports&taxonomies.name=concert';
+        }else if(evtRadioEls[i].checked){
             searchPhrase += '&taxonomies.name=' + evtRadioEls[i].id;
         }
+
     }//performers.slug=
 
 
@@ -40,13 +44,20 @@ function searchSeatGeekEvents(){
         return response.json();
     })
     .then(function (data) {
-       //console.log(data.events.length);
-       for(var i=0; i < data.events.length; i++){
-        console.log(data.events[i]);
-        document.querySelectorAll('#resultsNames ul li')[i].innerHTML = data.events[i].title;
-        document.querySelectorAll('#resultsAreas ul li')[i].innerHTML = data.events[i].venue.name;
-        var eventDate = moment(data.events[i].datetime_utc).format('lll');
-        document.querySelectorAll('#resultsHours ul li')[i].innerHTML = eventDate;
+        
+        for(var i=0; i < data.events.length; i++){
+            var tableRow = document.createElement('tr');
+            var titleTableCol = document.createElement('td');
+            titleTableCol.textContent = data.events[i].title;
+            var venueTableCol = document.createElement('td');
+            venueTableCol.textContent = data.events[i].venue.name;
+            var dateTableCol = document.createElement('td');
+            var eventDate = moment(data.events[i].datetime_utc).format('lll');
+            dateTableCol.textContent = eventDate;
+            tableRow.appendChild(titleTableCol);
+            tableRow.appendChild(venueTableCol);
+            tableRow.appendChild(dateTableCol);
+            resultsTable.appendChild(tableRow);
        }
     })
   }
@@ -69,18 +80,31 @@ function searchRestaurantsNearMe(){
         }
     }
     
-    fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/CA/city/San%20Diego/0', options)
+    fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/CA/city/San%20Diego/0?q=fuddruckers', options)
     .then(response => response.json())
     .catch(err => console.error(err))
 
     .then(function (data) {
         for(var i=0; i < data.restaurants.length; i++){
-            document.querySelectorAll('#resultsNames ul li')[i].innerHTML = data.restaurants[i].restaurantName;
-            document.querySelectorAll('#resultsAreas ul li')[i].innerHTML = data.restaurants[i].address + data.restaurants[i].zipCode;
-            restHours = data.restaurants[i].hoursInterval.split('|');
-            for(j = 0; j <= restHours.length; j++){
-                document.querySelectorAll('#resultsHours ul li')[j].innerHTML += restHours[j] + "<br>";
+            
+            var tableRow = document.createElement('tr');
+            var titleTableCol = document.createElement('td');
+            titleTableCol.textContent = data.restaurants[i].restaurantName;
+            var venueTableCol = document.createElement('td');
+            venueTableCol.textContent = data.restaurants[i].address + ' ' + data.restaurants[i].zipCode;
+            
+            var dateTableCol = document.createElement('td');
+            //var eventDate = moment(data.events[i].datetime_utc).format('lll');
+
+            var restHours = data.restaurants[i].hoursInterval.split('|');
+            for(j = 0; j < restHours.length; j++){
+
+                dateTableCol.innerHTML += restHours[j] + "<br>";
             }
+            tableRow.appendChild(titleTableCol);
+            tableRow.appendChild(venueTableCol);
+            tableRow.appendChild(dateTableCol);
+            resultsTable.appendChild(tableRow);
             //var eventDate = moment(data.restaurants[i].hoursInterval).format('lll');
             //document.querySelectorAll('#resultsHours ul li')[i].innerHTML = restHours;*/
         }
@@ -88,11 +112,7 @@ function searchRestaurantsNearMe(){
 }
 
 function searchAllEvents(){
-    for(var i=0; i < 10; i++){
-        document.querySelectorAll('#resultsNames ul li')[i].innerHTML = '';
-        document.querySelectorAll('#resultsAreas ul li')[i].innerHTML = '';
-        document.querySelectorAll('#resultsHours ul li')[i].innerHTML = '';
-    }
+    resultsTable.replaceChildren;
     if(allEventsRadioEl.checked){// All events and food/drink
         searchRestaurantsNearMe();
         searchSeatGeekEvents();
