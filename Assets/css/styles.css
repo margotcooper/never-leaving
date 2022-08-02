@@ -15,14 +15,13 @@
   width: 200px;
   padding-top: 82px;
 }
-/*#results {
-  width: 70%;
-  margin-left: 250px;
-  display: flex;
+#results {
   padding-top: 73px;
-  position: relative;
   border: 2px black;
-}*/
+}
+#results tr td {
+  padding: 10px;
+}
 .header {
   display: block;
   position: absolute;
@@ -31,10 +30,6 @@
   padding-left: 230px;
 }
 .main {
-  display: block;
-  position: absolute;
-}
-.section {
   display: block;
   position: absolute;
 }
@@ -68,4 +63,11 @@
 
 .resultsHeaders {
   text-decoration: underline;
+}
+
+tr:nth-child(even) {
+  background-color: #00c4a7;
+}
+thead th {
+  width: 30%;
 }
