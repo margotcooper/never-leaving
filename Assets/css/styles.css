@@ -71,3 +71,18 @@ tr:nth-child(even) {
 thead th {
   width: 30%;
 }
+.horizontalButtons {
+  display: flex;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.subCenter {
+  padding-right: 2em;
+  text-align: center;
+}
+.spaceBetween {
+  margin-left: 25px;
+  margin-top: 20px;
+}
