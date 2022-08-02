@@ -19,8 +19,8 @@
   padding-top: 73px;
   border: 2px black;
 }
-#results tr td{
-  padding:10px;
+#results tr td {
+  padding: 10px;
 }
 .header {
   display: block;
@@ -63,4 +63,11 @@
 
 .resultsHeaders {
   text-decoration: underline;
+}
+
+tr:nth-child(even) {
+  background-color: #00c4a7;
+}
+thead th {
+  width: 30%;
 }
