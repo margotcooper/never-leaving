@@ -29,9 +29,12 @@ function searchSeatGeekEvents(){
 
     // Get checked radio buttons
     for (i = 0; i < evtRadioEls.length; i++){
-        if(evtRadioEls[i].checked){
+        if (allEventsRadioEl.checked == true){
+            searchPhrase += '&taxonomies.name=sports&taxonomies.name=concert';
+        }else if(evtRadioEls[i].checked){
             searchPhrase += '&taxonomies.name=' + evtRadioEls[i].id;
         }
+
     }//performers.slug=
 
 
@@ -77,7 +80,7 @@ function searchRestaurantsNearMe(){
         }
     }
     
-    fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/CA/city/San%20Diego/0?q=fuddruckers', options)
+    fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/CA/city/San%20Diego/0', options)
     .then(response => response.json())
     .catch(err => console.error(err))
 
