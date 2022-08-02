@@ -80,7 +80,7 @@ function searchRestaurantsNearMe(){
         }
     }
     
-    fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/CA/city/San%20Diego/0?q=fuddruckers', options)
+    fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/CA/city/San%20Diego/0', options)
     .then(response => response.json())
     .catch(err => console.error(err))
 
