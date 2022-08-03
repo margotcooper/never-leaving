@@ -27,17 +27,16 @@
         </h1>
         <h3 class="subtitle subCenter">Choose Your Own Adventure!</h3>
       </header>
-      <br /><br />
+      <br />
       <section class="section is-size-5" id="searchBar">
         <form id="searchForm">
           <input
             type="text"
             id="searchPhraseBox"
-            placeholder="Search by Name or Date"
+            placeholder="Search by Name"
           />
-          <br />
           <div class="horizontalButtons">
-            <strong>Include:</strong><br />
+            <strong>Include:</strong>
             <input
               type="radio"
               class="evtRadio"
@@ -45,7 +44,7 @@
               name="searchOptions"
             /><label class="radio spaceBetween" for="restsRadio"
               >Restaurants and Bars</label
-            ><br />
+            >
             <!--<input type="radio" class="evtRadio" id="barsRadio" name="searchOptions" /><label
             for="barsRadio"
             >Bars</label
@@ -56,14 +55,14 @@
               id="concert"
               name="searchOptions"
             /><label class="radio spaceBetween" for="concert">Concerts</label
-            ><br />
+            >
             <input
               type="radio"
               class="evtRadio"
               id="sports"
               name="searchOptions"
             /><label class="radio spaceBetween" for="sports">Sports</label
-            ><br />
+            >
             <input
               type="radio"
               class="evtRadio"
@@ -72,18 +71,18 @@
             /><label class="radio spaceBetween" for="allEventsRadio"
               >Search Concerts and Sports</label
             >
+            <button
+              id="searchBtn"
+              type="button"
+              class="button is-primary is-medium"
+            >
+              Show Me Places to Go!
+            </button>
           </div>
         </form>
-        <button
-          id="searchBtn"
-          type="button"
-          class="button is-primary is-medium"
-        >
-          Show Me Places to Go!
-        </button>
       </section>
-      <section class="section">
-        <table id="results">
+      <section class="section resultssection">
+        <table>
           <thead>
             <tr>
               <th class="resultsHeaders" id="resultsNames">Names</th>
@@ -91,6 +90,8 @@
               <th class="resultsHeaders" id="resultsHours">Date & Time</th>
             </tr>
           </thead>
+        </table>
+        <table id="results">
         </table>
       </section>
     </main>
