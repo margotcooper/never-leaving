@@ -8,5 +8,7 @@ User stories: As a funseeker living in/visiting San Diego, I want to be able to 
 
 Direction for Future Dev: In the future, we planned for this application to expand to other major cities. Also, more APIs could be used to get additional data on other types of events to populate to display to the user. Additional modification could also be implemented to further refine searches, allowing users to personalize even more which types of activities they would like to see in their results.
 
+Screenshot of deployed application: (/Assets/images/hittingthetownss1.png)
+
 Link to repo: https://github.com/margotcooper/never-leaving
 Link to deployed application: https://margotcooper.github.io/never-leaving/
