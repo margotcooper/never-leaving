@@ -86,3 +86,33 @@ thead th {
   margin-left: 25px;
   margin-top: 20px;
 }
+/* Last minute */
+form{
+  width:1024px;
+  }
+  label{
+  font-size:16px;
+  }
+  .horizontalButtons{
+  width:824px;
+  display:inline;
+  }
+  .horizontalButtons strong{
+  font-size:16px;
+  padding-right: 10px;
+  }
+  .spaceBetween{
+  margin: 4px 25px 0 10px;
+  }
+  #dateDiv{
+  font-size: 20px;
+  }
+  .resultssection{
+    padding-top: 1rem;
+  }
+  #searchPhraseBox{
+    height: 50px;
+  }
+  #searchBtn{
+    width:235px;
+  }
