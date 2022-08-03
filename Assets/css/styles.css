@@ -18,6 +18,7 @@
 #results {
   padding-top: 73px;
   border: 2px black;
+  width: 940px;
 }
 #results tr td {
   padding: 10px;
